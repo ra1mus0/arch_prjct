@@ -1,0 +1,46 @@
+services:
+  base:
+    image: mariadb
+    container_name: maria
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+      - ./db/dbfile:/var/lib/mysql
+    command: '--default-authentication-plugin=mysql_native_password'
+    networks:
+      - app-network
+
+  wp:
+    depends_on:
+      - base
+    image: wordpress:6.8.3-php8.1-fpm
+    container_name: wordpress
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      - WORDPRESS_DB_HOST=base:3306
+      - WORDPRESS_DB_USER=$MYSQL_USER
+      - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
+      - WORDPRESS_DB_NAME=$MYSQL_DATABASE
+    volumes:
+      - ./www/wordpress:/var/www/html
+    networks:
+      - app-network
+
+  webserver:
+    depends_on:
+      - wp
+    image: nginx:1.15.12-alpine
+    container_name: nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./www/wordpress:/var/www/html
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
