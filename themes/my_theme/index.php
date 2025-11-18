@@ -6,7 +6,7 @@
     <title>arch-shop</title>
     <?php wp_head()?>
 </head>
-<body>
+<body class="no-scroll">
     <div class="home-page">
         <div class="container">
             <div class="home-page__inner">
