@@ -22,10 +22,10 @@
                 </div>
                 <div class="navbar">
                     <ul>
-                        <li>SHOP</li>
-                        <li>CATALOG</li>
-                        <li>ABOUT</li>
-                        <li>TRACKING</li>
+                        <li><a href="#">SHOP</a></li>
+                        <li><a href="#">CATALOG</a></li>
+                        <li><a href="#">ABOUT</a></li>
+                        <li><a href="#">TRACKING</a></li>
                     </ul>
                 </div>
                 <div class="social-links">

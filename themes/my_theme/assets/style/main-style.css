@@ -93,6 +93,42 @@ nav li a{
     margin: 0px;
     padding: 0px;
 }
+.navbar a:hover{
+    animation: fadeInScale 0.5s ease forwards;
+    transition: 0.3s;
+}
+.navbar li {
+    opacity: 0;
+    transform: scale(0);
+    animation: fadeInScale 0.5s ease forwards;
+}
+
+.navbar li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.navbar li:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.navbar li:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.navbar li:nth-child(4) {
+    animation-delay: 0.7s;
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
 .social-links__list{
  display: flex;
  align-items: center;
