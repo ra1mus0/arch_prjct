@@ -13,7 +13,7 @@ html{
 }
 @font-face{
     font-family: "Inter-light";
-    src: url(/fonts/Inter_18pt-Light.ttf);
+    src: url(../fonts/Inter_18pt-Light.ttf);
     font-weight: 100;
     font-style: normal;
     font-display: swap;
@@ -38,6 +38,9 @@ body{
     flex-direction: column;
     align-items: center;
     padding-left: 24px;
+}
+.logo_banner{
+    margin-top: 15px;
 }
 .logo__img{
     margin-top: 8px;

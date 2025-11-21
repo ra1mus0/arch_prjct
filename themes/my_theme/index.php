@@ -4,7 +4,7 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>arch-shop</title>
-    <?php wp_head()?>
+    <?php wp_head();?>
 </head>
 <body class="no-scroll">
     <div class="home-page">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="navbar">
                     <ul>
-                        <li><a href="#">SHOP</a></li>
+                        <li><a href="<?php echo get_permalink(6); ?>">SHOP</a></li>
                         <li><a href="#">CATALOG</a></li>
                         <li><a href="#">ABOUT</a></li>
                         <li><a href="#">TRACKING</a></li>
