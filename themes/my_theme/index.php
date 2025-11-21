@@ -22,7 +22,7 @@
                 </div>
                 <div class="navbar">
                     <ul>
-                        <li><a href="<?php echo get_permalink(6); ?>">SHOP</a></li>
+                        <li><a href="<?php echo get_permalink(get_page_by_path('catalog')); ?>">SHOP</a></li>
                         <li><a href="#">CATALOG</a></li>
                         <li><a href="#">ABOUT</a></li>
                         <li><a href="#">TRACKING</a></li>
