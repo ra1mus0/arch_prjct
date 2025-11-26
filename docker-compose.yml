@@ -2,6 +2,8 @@ services:
   base:
     image: mariadb
     container_name: maria
+    ports:
+      - "3306:3306"
     restart: unless-stopped
     env_file: .env
     volumes:
@@ -41,7 +43,17 @@ services:
       - ./themes:/var/www/html/wp-content/themes/:rw
     networks:
       - app-network
-
+  phpmyadmin:
+    depends_on:
+      - base
+    image: phpmyadmin
+    ports:
+      - 8181:80
+    environment:
+      - PMA_HOST=base
+      - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+    networks:
+      - app-network
 networks:
   app-network:
     driver: bridge
